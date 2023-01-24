@@ -44,7 +44,7 @@ class _AddPageState extends State<AddPage> {
         ),
         title: Builder(
           builder: (context) {
-            if (currentIndex == 0) {
+            if (currentIndex == 1) {
               return const Center(
                 child: Text(
                   'Your list of tasks',
@@ -77,6 +77,7 @@ class _AddPageState extends State<AddPage> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.auto_awesome_outlined),
+            
             label: 'Motivation',
           ),
           BottomNavigationBarItem(
