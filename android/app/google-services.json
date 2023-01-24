@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1097125809303",
+    "project_id": "makeittidy3310",
+    "storage_bucket": "makeittidy3310.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097125809303:android:2607ab682859ad4cceedd2",
+        "android_client_info": {
+          "package_name": "com.juliaczaplejewicz.make_it_tidy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1097125809303-b0hdcgu8bqjmjjl9te0k1nm5f86h2fn8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_iKJs3k0gdyIxgqlIg9gFHgtV3o61Rfg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1097125809303-b0hdcgu8bqjmjjl9te0k1nm5f86h2fn8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
