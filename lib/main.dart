@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -21,7 +22,34 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Scaffold(),
+      home: const RootPage(),
     );
+  }
+}
+
+class RootPage extends StatelessWidget {
+  const RootPage({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<User?>(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          final user = snapshot.data;
+          if (user == null) {
+            return const Scaffold(
+              body: Center(
+                child: Text('You are not logged in'),
+              ),
+            );
+          }
+          return Scaffold(
+            body: Center(
+              child: Text('You are logged in as ${user.email}'),
+            ),
+          );
+        });
   }
 }

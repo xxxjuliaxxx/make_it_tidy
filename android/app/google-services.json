@@ -29,6 +29,13 @@
             {
               "client_id": "1097125809303-b0hdcgu8bqjmjjl9te0k1nm5f86h2fn8.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "1097125809303-rc8bdjodmi9nbuuk2hsumeq849rb1p6k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.juliaczaplejewicz.makeItTidy"
+              }
             }
           ]
         }
