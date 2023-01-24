@@ -1,8 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:make_it_tidy/app/home/add_task/add_page_content.dart';
+import 'package:make_it_tidy/app/home/motivation/motivation_page_content.dart';
+import 'package:make_it_tidy/app/home/my_account/my_account_page_content.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({
+class AddPage extends StatefulWidget {
+  const AddPage({
     Key? key,
     required this.user,
   }) : super(key: key);
@@ -10,47 +13,59 @@ class HomePage extends StatefulWidget {
   final User user;
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<AddPage> createState() => _AddPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _AddPageState extends State<AddPage> {
   var currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Builder(builder: (context) {
-          if (currentIndex == 0) {
-            return const Center(
-              child: Text('Your list of tasks'),
+        centerTitle: true,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomRight: Radius.circular(25),
+            bottomLeft: Radius.circular(25),
+          ),
+        ),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: <Color>[
+                Color.fromARGB(255, 251, 100, 127),
+                Color.fromARGB(255, 61, 204, 240)
+              ],
+            ),
+          ),
+        ),
+        title: Builder(
+          builder: (context) {
+            if (currentIndex == 0) {
+              return const Center(
+                child: Text(
+                  'Your list of tasks',
+                  style: TextStyle(fontSize: 22),
+                ),
+              );
+            }
+            return Center(
+              child: Column(children: []),
             );
-          }
-          return Center(
-            child: Column(children: []),
-          );
-        }),
+          },
+        ),
       ),
       body: Builder(builder: (context) {
         if (currentIndex == 0) {
-          return const Center(
-            child: Text('Jeden'),
-          );
+          return const MotivationPageContent();
         }
-        return Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('You are logged in as ${widget.user.email}'),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                  onPressed: () {
-                    FirebaseAuth.instance.signOut();
-                  },
-                  child: const Text('Log out'))
-            ],
-          ),
-        );
+        if (currentIndex == 1) {
+          return const AddPageContent();
+        }
+        return MyAccountPageContent(email: widget.user.email);
       }),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
@@ -60,6 +75,10 @@ class _HomePageState extends State<HomePage> {
           });
         },
         items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.auto_awesome_outlined),
+            label: 'Motivation',
+          ),
           BottomNavigationBarItem(
             icon: Icon(Icons.add_task_outlined),
             label: 'Add your task',
