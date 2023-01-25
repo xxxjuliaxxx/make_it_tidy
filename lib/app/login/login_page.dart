@@ -27,9 +27,12 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(isCreatingAccount == true
-                  ? 'First, register'
-                  : 'Try, sign in'),
+              Text(
+                isCreatingAccount == true ? 'First, register' : 'Try, sign in',
+                style: const TextStyle(
+                  fontSize: 18,
+                ),
+              ),
               const SizedBox(height: 15),
               TextField(
                 controller: widget.emailController,
@@ -42,38 +45,46 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Text(errorMessage),
               const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () async {
-                  if (isCreatingAccount == true) {
-                    //registration
+              SizedBox(
+                width: 90,
+                height: 38,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 84, 186, 197),
+                  ),
+                  onPressed: () async {
+                    if (isCreatingAccount == true) {
+                      //registration
 
-                    try {
-                      await FirebaseAuth.instance
-                          .createUserWithEmailAndPassword(
-                              email: widget.emailController.text,
-                              password: widget.passwordController.text);
-                    } catch (error) {
-                      setState(() {
-                        const SizedBox(height: 20);
-                        errorMessage = error.toString();
-                      });
-                    }
-                  } else {
-                    //login
+                      try {
+                        await FirebaseAuth.instance
+                            .createUserWithEmailAndPassword(
+                                email: widget.emailController.text,
+                                password: widget.passwordController.text);
+                      } catch (error) {
+                        setState(() {
+                          const SizedBox(height: 20);
+                          errorMessage = error.toString();
+                        });
+                      }
+                    } else {
+                      //login
 
-                    try {
-                      await FirebaseAuth.instance.signInWithEmailAndPassword(
-                          email: widget.emailController.text,
-                          password: widget.passwordController.text);
-                    } catch (error) {
-                      setState(() {
-                        const SizedBox(height: 20);
-                        errorMessage = error.toString();
-                      });
+                      try {
+                        await FirebaseAuth.instance.signInWithEmailAndPassword(
+                            email: widget.emailController.text,
+                            password: widget.passwordController.text);
+                      } catch (error) {
+                        setState(() {
+                          const SizedBox(height: 20);
+                          errorMessage = error.toString();
+                        });
+                      }
                     }
-                  }
-                },
-                child: Text(isCreatingAccount == true ? 'Register' : 'Sign in'),
+                  },
+                  child:
+                      Text(isCreatingAccount == true ? 'Register' : 'Sign in'),
+                ),
               ),
               const SizedBox(height: 20),
               if (isCreatingAccount == false) ...[

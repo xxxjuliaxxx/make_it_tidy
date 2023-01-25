@@ -47,8 +47,8 @@ class _AddPageState extends State<AddPage> {
             if (currentIndex == 1) {
               return const Center(
                 child: Text(
-                  'Your list of tasks',
-                  style: TextStyle(fontSize: 22),
+                  'Your goal list',
+                  style: TextStyle(fontSize: 20),
                 ),
               );
             }
@@ -77,7 +77,6 @@ class _AddPageState extends State<AddPage> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.auto_awesome_outlined),
-            
             label: 'Motivation',
           ),
           BottomNavigationBarItem(
