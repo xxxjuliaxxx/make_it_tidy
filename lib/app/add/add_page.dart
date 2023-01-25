@@ -22,40 +22,45 @@ class _AddPageState extends State<AddPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-            bottomRight: Radius.circular(25),
-            bottomLeft: Radius.circular(25),
-          ),
-        ),
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: <Color>[
-                Color.fromARGB(255, 251, 100, 127),
-                Color.fromARGB(255, 61, 204, 240)
-              ],
+      appBar: PreferredSize(
+        preferredSize: currentIndex == 0
+            ? const Size.fromHeight(0)
+            : const Size.fromHeight(kToolbarHeight),
+        child: AppBar(
+          centerTitle: true,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              bottomRight: Radius.circular(25),
+              bottomLeft: Radius.circular(25),
             ),
           ),
-        ),
-        title: Builder(
-          builder: (context) {
-            if (currentIndex == 1) {
-              return const Center(
-                child: Text(
-                  'Your goal list',
-                  style: TextStyle(fontSize: 20),
-                ),
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: <Color>[
+                  Color.fromARGB(255, 251, 100, 127),
+                  Color.fromARGB(255, 61, 204, 240)
+                ],
+              ),
+            ),
+          ),
+          title: Builder(
+            builder: (context) {
+              if (currentIndex == 1) {
+                return const Center(
+                  child: Text(
+                    'Your goal list',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                );
+              }
+              return Center(
+                child: Column(children: const []),
               );
-            }
-            return Center(
-              child: Column(children: []),
-            );
-          },
+            },
+          ),
         ),
       ),
       body: Builder(builder: (context) {
