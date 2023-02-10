@@ -1,8 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:make_it_tidy/app/add/add_page.dart';
+import 'package:make_it_tidy/app/add/add_goal_page.dart';
 import 'package:make_it_tidy/app/login/login_page.dart';
+import 'package:make_it_tidy/pages/home.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -10,23 +11,9 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const RootPage(),
-    );
-  }
+  runApp(const MaterialApp(
+    home: HomePage(),
+  ));
 }
 
 class RootPage extends StatelessWidget {
@@ -41,11 +28,9 @@ class RootPage extends StatelessWidget {
         builder: (context, snapshot) {
           final user = snapshot.data;
           if (user == null) {
-            return  LoginPage();
+            return LoginPage();
           }
-          return AddPage(user: user);
+          return AddGoalPage(user: user);
         });
   }
 }
-
-
