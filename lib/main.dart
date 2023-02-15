@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:make_it_tidy/app/add/add_goal_page.dart';
 import 'package:make_it_tidy/app/login/login_page.dart';
-import 'package:make_it_tidy/pages/home.dart';
 import 'firebase_options.dart';
 
 void main() async {

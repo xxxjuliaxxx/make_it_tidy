@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HorizontalDayList extends StatefulWidget {
+  
   const HorizontalDayList({Key? key}) : super(key: key);
 
   @override
@@ -35,26 +36,39 @@ class _HorizontalDayListState extends State<HorizontalDayList> {
         scrollDirection: Axis.horizontal,
         itemCount: weekdays.length,
         itemBuilder: (BuildContext context, int index) {
-          return Container(
-            margin: const EdgeInsets.only(left: 5, right: 5),
-            height: 70,
-            width: 45.5,
-            decoration: BoxDecoration(
-                color: cardColorList[index][0],
-                borderRadius: const BorderRadius.all(Radius.circular(10))),
-            child: Column(
-              children: [
-                const SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  weekdays[index],
-                  style: TextStyle(
-                      fontSize: 18,
-                      color: cardColorList[index][1],
-                      fontWeight: FontWeight.bold),
-                ),
-              ],
+          return GestureDetector(
+            onTap: () {
+              setState(() {
+                for (int i = 0; i < cardColorList.length; i++) {
+                  cardColorList[i][0] = inactiveCardColor;
+                  cardColorList[i][1] = inactiveTextColor;
+                }
+
+                cardColorList[index][0] = activeCardColor;
+                cardColorList[index][1] = activeTextColor;
+              });
+            },
+            child: Container(
+              margin: const EdgeInsets.only(left: 5, right: 5),
+              height: 70,
+              width: 45.5,
+              decoration: BoxDecoration(
+                  color: cardColorList[index][0],
+                  borderRadius: const BorderRadius.all(Radius.circular(10))),
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    weekdays[index],
+                    style: TextStyle(
+                        fontSize: 18,
+                        color: cardColorList[index][1],
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
             ),
           );
         },

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:make_it_tidy/custom_widgets/day_list.dart';
+import 'package:make_it_tidy/custom_widgets/task_grid_view.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,6 +10,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  String weekday = "MON";
+
+void changeWeekday(String newDay) {
+  setState(() {
+    weekday = newDay;
+  });
+  print("changed, $weekday");
+}
+  List<List<String>> taskInformation = [
+    ["Hello", "Hello"]
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +43,7 @@ class _HomePageState extends State<HomePage> {
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30)),
                   boxShadow: [BoxShadow(blurRadius: 10.0)]),
+              child: TaskGridView(taskList: taskInformation),
             ),
           ),
         ],
