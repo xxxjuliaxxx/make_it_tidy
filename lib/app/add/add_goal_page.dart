@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:make_it_tidy/app/home/motivation/motivation_page_content.dart';
-import 'package:make_it_tidy/app/home/task/add_page_content.dart';
 import 'package:make_it_tidy/app/home/my_account/my_account_page_content.dart';
 import 'package:make_it_tidy/pages/home.dart';
 
