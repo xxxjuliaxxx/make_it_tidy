@@ -12,12 +12,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   String weekday = "MON";
 
-void changeWeekday(String newDay) {
-  setState(() {
-    weekday = newDay;
-  });
-  print("changed, $weekday");
-}
+  void changeWeekday(String newDay) {
+    setState(() {
+      weekday = newDay;
+    });
+    print("changed, $weekday");
+  }
+
   List<List<String>> taskInformation = [
     ["Hello", "Hello"]
   ];
@@ -54,8 +55,8 @@ void changeWeekday(String newDay) {
           onPressed: () {},
           elevation: 13,
           highlightElevation: 50,
-          splashColor: const Color.fromARGB(255, 210, 130, 162),
-          backgroundColor: const Color.fromARGB(255, 60, 193, 214),
+          splashColor: const Color.fromARGB(235, 249, 51, 133),
+          backgroundColor: const Color.fromARGB(255, 115, 202, 238),
           child: const Icon(
             Icons.add_outlined,
             size: 40,

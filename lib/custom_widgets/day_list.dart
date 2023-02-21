@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class HorizontalDayList extends StatefulWidget {
-  
   const HorizontalDayList({Key? key}) : super(key: key);
 
   @override
@@ -11,20 +10,20 @@ class HorizontalDayList extends StatefulWidget {
 class _HorizontalDayListState extends State<HorizontalDayList> {
   List<String> weekdays = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
 
-  Color activeCardColor = Colors.white;
-  Color inactiveCardColor = const Color.fromARGB(66, 115, 205, 215);
+  Color activeCardColor = const Color.fromARGB(235, 230, 111, 160);
+  Color inactiveCardColor = const Color.fromARGB(255, 115, 202, 238);
 
-  Color activeTextColor = Colors.black;
-  Color inactiveTextColor = Colors.white;
+  Color activeTextColor = const Color.fromARGB(255, 255, 255, 255);
+  Color inactiveTextColor = const Color.fromARGB(255, 211, 215, 219);
 
   List<List<Color>> cardColorList = [
-    [const Color.fromARGB(255, 60, 193, 214), Colors.white],
-    [const Color.fromARGB(255, 60, 193, 214), Colors.white],
-    [const Color.fromARGB(255, 60, 193, 214), Colors.white],
-    [const Color.fromARGB(255, 60, 193, 214), Colors.white],
-    [const Color.fromARGB(255, 60, 193, 214), Colors.white],
-    [const Color.fromARGB(255, 60, 193, 214), Colors.white],
-    [const Color.fromARGB(255, 60, 193, 214), Colors.white],
+    [const Color.fromARGB(255, 115, 202, 238), Colors.white],
+    [const Color.fromARGB(255, 115, 202, 238), Colors.white],
+    [const Color.fromARGB(255, 115, 202, 238), Colors.white],
+    [const Color.fromARGB(255, 115, 202, 238), Colors.white],
+    [const Color.fromARGB(255, 115, 202, 238), Colors.white],
+    [const Color.fromARGB(255, 115, 202, 238), Colors.white],
+    [const Color.fromARGB(255, 115, 202, 238), Colors.white],
   ];
 
   @override
