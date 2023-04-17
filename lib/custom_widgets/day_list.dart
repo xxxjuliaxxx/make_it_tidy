@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 class HorizontalDayList extends StatefulWidget {
-  const HorizontalDayList({Key? key}) : super(key: key);
+
+  final Function dayUpdateFunction;
+
+  const HorizontalDayList({Key? key, required this.dayUpdateFunction})
+      : super(key: key);
 
   @override
-  _HorizontalDayListState createState() => _HorizontalDayListState();
+  State<HorizontalDayList> createState() => _HorizontalDayListState();
 }
 
 class _HorizontalDayListState extends State<HorizontalDayList> {
+
   List<String> weekdays = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
 
   Color activeCardColor = const Color.fromARGB(235, 230, 111, 160);
@@ -26,7 +32,32 @@ class _HorizontalDayListState extends State<HorizontalDayList> {
     [const Color.fromARGB(255, 115, 202, 238), Colors.white],
   ];
 
-  @override
+  late DateTime date;
+
+  void updateDayColor(int index) {
+    setState(() {
+      for (int i = 0; i < cardColorList.length; i++) {
+        cardColorList[i][0] = inactiveCardColor;
+        cardColorList[i][1] = inactiveTextColor;
+      }
+
+      cardColorList[index][0] = activeCardColor;
+      cardColorList[index][1] = activeTextColor;
+    });
+   }
+
+   @override
+  void initState() {
+    super.initState();
+    SchedulerBinding.instance.addPostFrameCallback((_) {
+      date = DateTime.now();
+      widget.dayUpdateFunction(weekdays[date.weekday - 1]);
+      updateDayColor(date.weekday - 1);
+    });
+  }
+
+
+   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 50,
@@ -37,36 +68,19 @@ class _HorizontalDayListState extends State<HorizontalDayList> {
         itemBuilder: (BuildContext context, int index) {
           return GestureDetector(
             onTap: () {
-              setState(() {
-                for (int i = 0; i < cardColorList.length; i++) {
-                  cardColorList[i][0] = inactiveCardColor;
-                  cardColorList[i][1] = inactiveTextColor;
-                }
-
-                cardColorList[index][0] = activeCardColor;
-                cardColorList[index][1] = activeTextColor;
-              });
-            },
+  updateDayColor(index);
+  widget.dayUpdateFunction(weekdays[index]);
+},
             child: Container(
               margin: const EdgeInsets.only(left: 5, right: 5),
               height: 70,
-              width: 45.5,
+              width: 50,
               decoration: BoxDecoration(
                   color: cardColorList[index][0],
-                  borderRadius: const BorderRadius.all(Radius.circular(10))),
-              child: Column(
-                children: [
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    weekdays[index],
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: cardColorList[index][1],
-                        fontWeight: FontWeight.bold),
-                  ),
-                ],
+                  borderRadius: const BorderRadius.all(Radius.circular(10))
+              ),
+              child: Center(
+                child: Text(weekdays[index], style: TextStyle(fontSize: 18, color: cardColorList[index][1], fontWeight: FontWeight.bold),),
               ),
             ),
           );

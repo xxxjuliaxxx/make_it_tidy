@@ -9,6 +9,7 @@ class MyAccountPageContent extends StatelessWidget {
   }) : super(key: key);
 
   final String? email;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +60,7 @@ class MyAccountPageContent extends StatelessWidget {
             height: 40,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color.fromARGB(255, 102, 182, 216),
+                backgroundColor: const Color.fromARGB(255, 102, 182, 216),
               ),
               onPressed: () {
                 FirebaseAuth.instance.signOut();
