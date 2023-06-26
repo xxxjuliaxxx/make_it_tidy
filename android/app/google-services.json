@@ -1,40 +1,112 @@
 {
   "project_info": {
-    "project_number": "1097125809303",
-    "project_id": "makeittidy3310",
-    "storage_bucket": "makeittidy3310.appspot.com"
+    "project_number": "710280074560",
+    "project_id": "thistidylife",
+    "storage_bucket": "thistidylife.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1097125809303:android:2607ab682859ad4cceedd2",
+        "mobilesdk_app_id": "1:710280074560:android:bd5f81cd25141dc80596a5",
         "android_client_info": {
-          "package_name": "com.juliaczaplejewicz.make_it_tidy"
+          "package_name": "com.example.tidy_life1"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1097125809303-b0hdcgu8bqjmjjl9te0k1nm5f86h2fn8.apps.googleusercontent.com",
+          "client_id": "710280074560-n9g5a6eic0hr80l9lq1cptrfi0klbamb.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC_iKJs3k0gdyIxgqlIg9gFHgtV3o61Rfg"
+          "current_key": "AIzaSyCwD7RrdSg-0yb83tNV0SapGg0lroQW6Jw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1097125809303-b0hdcgu8bqjmjjl9te0k1nm5f86h2fn8.apps.googleusercontent.com",
+              "client_id": "710280074560-n9g5a6eic0hr80l9lq1cptrfi0klbamb.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "1097125809303-rc8bdjodmi9nbuuk2hsumeq849rb1p6k.apps.googleusercontent.com",
+              "client_id": "710280074560-apqbv9nisfhm5k82vsdupfvfcugofqdj.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.juliaczaplejewicz.makeItTidy"
+                "bundle_id": "com.juliaczaplejewicz.makeTidyLife"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:710280074560:android:0ba75eecc4a44a790596a5",
+        "android_client_info": {
+          "package_name": "com.juliaczaplejewicz.make_it_tidy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "710280074560-n9g5a6eic0hr80l9lq1cptrfi0klbamb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwD7RrdSg-0yb83tNV0SapGg0lroQW6Jw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "710280074560-n9g5a6eic0hr80l9lq1cptrfi0klbamb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "710280074560-apqbv9nisfhm5k82vsdupfvfcugofqdj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.juliaczaplejewicz.makeTidyLife"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:710280074560:android:f2181560161bb4b20596a5",
+        "android_client_info": {
+          "package_name": "com.juliaczaplejewicz.make_tidy_life"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "710280074560-n9g5a6eic0hr80l9lq1cptrfi0klbamb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwD7RrdSg-0yb83tNV0SapGg0lroQW6Jw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "710280074560-n9g5a6eic0hr80l9lq1cptrfi0klbamb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "710280074560-apqbv9nisfhm5k82vsdupfvfcugofqdj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.juliaczaplejewicz.makeTidyLife"
               }
             }
           ]

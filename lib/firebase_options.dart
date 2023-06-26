@@ -50,20 +50,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyC_iKJs3k0gdyIxgqlIg9gFHgtV3o61Rfg',
-    appId: '1:1097125809303:android:2607ab682859ad4cceedd2',
-    messagingSenderId: '1097125809303',
-    projectId: 'makeittidy3310',
-    storageBucket: 'makeittidy3310.appspot.com',
+    apiKey: 'AIzaSyCwD7RrdSg-0yb83tNV0SapGg0lroQW6Jw',
+    appId: '1:710280074560:android:0ba75eecc4a44a790596a5',
+    messagingSenderId: '710280074560',
+    projectId: 'thistidylife',
+    storageBucket: 'thistidylife.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBH86b6ILwi2w534Cj0tjB3RUcYtAObWZE',
-    appId: '1:1097125809303:ios:2aae03aad47c3fa1ceedd2',
-    messagingSenderId: '1097125809303',
-    projectId: 'makeittidy3310',
-    storageBucket: 'makeittidy3310.appspot.com',
-    iosClientId: '1097125809303-rc8bdjodmi9nbuuk2hsumeq849rb1p6k.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDLzDcRtJEZ5ByzQU6wJcv334qfUyifaxo',
+    appId: '1:710280074560:ios:bb2f16334d92540b0596a5',
+    messagingSenderId: '710280074560',
+    projectId: 'thistidylife',
+    storageBucket: 'thistidylife.appspot.com',
+    iosClientId: '710280074560-j6uumu0ei0h9ut3d5c3fphe7gp04cu11.apps.googleusercontent.com',
     iosBundleId: 'com.juliaczaplejewicz.makeItTidy',
   );
 }
