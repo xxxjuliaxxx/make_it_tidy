@@ -4,7 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 class MotivationPageContent extends StatelessWidget {
   const MotivationPageContent({
-    Key? key, required User user,
+    Key? key,
+    required User user,
   }) : super(key: key);
 
   @override
@@ -33,7 +34,7 @@ class MotivationPageContent extends StatelessWidget {
                 ),
               ),
               Text(
-                'consistency is key to any goal',
+                'consistency is the key to any goal',
                 style: GoogleFonts.thasadith(
                   color: Colors.white,
                   fontSize: 23,

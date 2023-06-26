@@ -59,7 +59,7 @@ class _TodoInformationPopupState extends State<TodoInformationPopup> {
               child: TextField(
                 controller: widget.descriptionController,
                 decoration: const InputDecoration(
-                  labelStyle: TextStyle(
+                  labelStyle: TextStyle( 
                       color: Color.fromARGB(255, 107, 99, 99),
                       fontWeight: FontWeight.bold),
                   labelText: "Description",

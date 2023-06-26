@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:make_it_tidy/app/add/add_goal_page.dart';
+import 'package:make_it_tidy/app/add/goal_page.dart';
 import 'package:make_it_tidy/app/login/login_page.dart';
 import 'firebase_options.dart';
 
@@ -39,7 +39,7 @@ class RootPage extends StatelessWidget {
           if (user == null) {
             return LoginPage();
           }
-          return AddGoalPage(user: user);
+          return GoalPage(user: user);
         });
   }
 }

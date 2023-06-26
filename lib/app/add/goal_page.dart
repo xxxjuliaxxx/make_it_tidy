@@ -4,8 +4,8 @@ import 'package:make_it_tidy/app/home/motivation/motivation_page_content.dart';
 import 'package:make_it_tidy/app/home/my_account/my_account_page_content.dart';
 import 'package:make_it_tidy/pages/home.dart';
 
-class AddGoalPage extends StatefulWidget {
-  const AddGoalPage({
+class GoalPage extends StatefulWidget {
+  const GoalPage({
     Key? key,
     required this.user,
   }) : super(key: key);
@@ -13,10 +13,10 @@ class AddGoalPage extends StatefulWidget {
   final User user;
 
   @override
-  State<AddGoalPage> createState() => _AddGoalPageState();
+  State<GoalPage> createState() => _GoalPageState();
 }
 
-class _AddGoalPageState extends State<AddGoalPage> {
+class _GoalPageState extends State<GoalPage> {
   var currentIndex = 0;
 
   @override
@@ -56,8 +56,8 @@ class _AddGoalPageState extends State<AddGoalPage> {
                   ),
                 );
               }
-              return Center(
-                child: Column(children: const []),
+              return const Center(
+                child: Column(children: []),
               );
             },
           ),
@@ -68,7 +68,7 @@ class _AddGoalPageState extends State<AddGoalPage> {
           return MotivationPageContent(user: widget.user);
         }
         if (currentIndex == 1) {
-          return const HomePage();
+          return HomePage();
         }
         return MyAccountPageContent(email: widget.user.email);
       }),
