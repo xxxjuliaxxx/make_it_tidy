@@ -4,8 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:make_it_tidy/custom_widgets/todo_tile.dart';
 
 class TodoGridView extends StatefulWidget {
-  List<String> todoList;
-  TodoGridView({Key? key, required this.todoList}) : super(key: key);
+  final List list;
+  TodoGridView({
+    Key? key,
+    required this.list,
+  }) : super(key: key);
 
   @override
   State<TodoGridView> createState() => _TodoGridViewState();
@@ -18,11 +21,11 @@ class _TodoGridViewState extends State<TodoGridView> {
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
       ),
-      itemCount: widget.todoList.length,
+      itemCount: widget.list.length,
       itemBuilder: (BuildContext context, int index) {
         return TodoTile(
-            title: widget.todoList[index][0],
-            description: widget.todoList[index][1]);
+            title: widget.list[index]["title"],
+            description: widget.list[index]["description"]);
       },
     );
   }

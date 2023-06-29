@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:make_it_tidy/custom_widgets/day_list.dart';
 import 'package:make_it_tidy/custom_widgets/todo_grid_view.dart';
 import 'package:make_it_tidy/custom_widgets/todo_information_popup.dart';
+import 'package:make_it_tidy/data/to_do_list_data.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({
@@ -23,6 +24,7 @@ class _HomePageState extends State<HomePage> {
   List<String> todoInformation = [];
 
   String weekday = '';
+  List list = sun;
 
   void showInSnackBar(String value) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -36,8 +38,18 @@ class _HomePageState extends State<HomePage> {
   }
 
   void changeWeekday(String newDay) {
+    final weekdayNames = {
+      "MON": mon,
+      "TUE": tue,
+      "WED": wed,
+      "THU": thu,
+      "FRI": fri,
+      "SAT": sat,
+      "SUN": sun
+    };
     setState(() {
       weekday = newDay;
+      list = weekdayNames[newDay] as List;
     });
 
     updateList();
@@ -56,52 +68,54 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          const SizedBox(
-            height: 20,
-          ),
-          HorizontalDayList(
-            dayUpdateFunction: changeWeekday,
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Expanded(
-            child: Container(
-              width: double.infinity,
-              decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30)),
-                  boxShadow: [BoxShadow(blurRadius: 10.0)]),
-              child: TodoGridView(
-                todoList: dayDependentTodos,
-                onTodoTap: (todo) {
-                  final parts = todo.split(",");
-                  showDialog(
-                    context: context,
-                    builder: (context) {
-                      return AlertDialog(
-                        title: Text(parts[1]), // użyj tytułu
-                        content: Text(parts[2]), // użyj opisu
-                        actions: [
-                          TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Text("OK"),
-                          ),
-                        ],
-                      );
-                    },
-                  );
-                },
+      body: SafeArea(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 20,
+            ),
+            HorizontalDayList(
+              dayUpdateFunction: changeWeekday,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Expanded(
+              child: Container(
+                width: double.infinity,
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(30),
+                        topRight: Radius.circular(30)),
+                    boxShadow: [BoxShadow(blurRadius: 10.0)]),
+                child: TodoGridView(
+                  list: list,
+                  // onTodoTap: (todo) {
+                  //   final parts = todo.split(",");
+                  //   showDialog(
+                  //     context: context,
+                  //     builder: (context) {
+                  //       return AlertDialog(
+                  //         title: Text(parts[1]), // użyj tytułu
+                  //         content: Text(parts[2]), // użyj opisu
+                  //         actions: [
+                  //           TextButton(
+                  //             onPressed: () {
+                  //               Navigator.pop(context);
+                  //             },
+                  //             child: const Text("OK"),
+                  //           ),
+                  //         ],
+                  //       );
+                  //     },
+                  //   );
+                  // },
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
       floatingActionButton: Transform.scale(
         scale: 1.05,
@@ -137,8 +151,13 @@ class _HomePageState extends State<HomePage> {
                     titleController.text == "") {
                   showInSnackBar("Title or description can't be empty!");
                 } else {
-                  todoInformation.add(
-                      "$weekday ${titleController.text} ${descriptionController.text}");
+                  list.add({
+                    "title": titleController.text,
+                    "description": descriptionController.text
+                  });
+                  print(sun);
+                  // todoInformation.add(
+                  // "$weekday ${titleController.text} ${descriptionController.text}");
 
                   updateList();
                   titleController.clear();
