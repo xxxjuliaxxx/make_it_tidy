@@ -5,7 +5,7 @@ import 'package:make_it_tidy/custom_widgets/todo_tile.dart';
 
 class TodoGridView extends StatefulWidget {
   final List list;
-  TodoGridView({
+  const TodoGridView({
     Key? key,
     required this.list,
   }) : super(key: key);

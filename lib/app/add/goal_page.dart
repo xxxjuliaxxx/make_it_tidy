@@ -56,7 +56,7 @@ class _GoalPageState extends State<GoalPage> {
                   ),
                 );
               }
-              return Center(
+              return const Center(
                 child: Column(children: []),
               );
             },
