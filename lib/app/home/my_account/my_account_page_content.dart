@@ -9,7 +9,6 @@ class MyAccountPageContent extends StatelessWidget {
   }) : super(key: key);
 
   final String? email;
-  
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +22,14 @@ class MyAccountPageContent extends StatelessWidget {
               SizedBox(
                 width: 230.0,
                 height: 230.0,
-                child: Container(
-                  padding: const EdgeInsets.only(bottom: 100),
-                  child: Image.network(
-                    'https://i.pinimg.com/564x/77/9a/bb/779abb4a08caa52ac49be4e70df8de28.jpg',
-                    fit: BoxFit.cover,
+                  child: Container(
+                    padding: const EdgeInsets.only(bottom: 100),
+                    child: Image.network(
+                      'https://i.pinimg.com/564x/77/9a/bb/779abb4a08caa52ac49be4e70df8de28.jpg',
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
-              ),
               const Positioned(
                 bottom: 10.0,
                 left: 10.0,
