@@ -71,7 +71,7 @@ class _HorizontalDayListState extends State<HorizontalDayList> {
             child: Container(
               margin: const EdgeInsets.only(left: 5, right: 5),
               height: 50,
-              width: 45,
+              width: 50,
               decoration: BoxDecoration(
                   color: cardColorList[index][0],
                   borderRadius: const BorderRadius.all(Radius.circular(10))),

@@ -91,26 +91,6 @@ class _HomePageState extends State<HomePage> {
                     boxShadow: [BoxShadow(blurRadius: 10.0)]),
                 child: TodoGridView(
                   list: list,
-                  // onTodoTap: (todo) {
-                  //   final parts = todo.split(",");
-                  //   showDialog(
-                  //     context: context,
-                  //     builder: (context) {
-                  //       return AlertDialog(
-                  //         title: Text(parts[1]), // użyj tytułu
-                  //         content: Text(parts[2]), // użyj opisu
-                  //         actions: [
-                  //           TextButton(
-                  //             onPressed: () {
-                  //               Navigator.pop(context);
-                  //             },
-                  //             child: const Text("OK"),
-                  //           ),
-                  //         ],
-                  //       );
-                  //     },
-                  //   );
-                  // },
                 ),
               ),
             ),
@@ -132,7 +112,7 @@ class _HomePageState extends State<HomePage> {
               "SUN"
             ];
             final newTodo = [
-              weekdayNames[now.weekday - 1], // dodaj bieżący dzień tygodnia
+              weekdayNames[now.weekday - 1], // add day of the week
               titleController.text,
               descriptionController.text
             ];

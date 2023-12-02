@@ -18,7 +18,7 @@ class _TodoInformationPopupState extends State<TodoInformationPopup> {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      backgroundColor: const Color.fromARGB(255, 136, 195, 204),
+      backgroundColor: const Color.fromARGB(255, 159, 229, 246),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       elevation: 20,
       child: SingleChildScrollView(
@@ -28,11 +28,11 @@ class _TodoInformationPopupState extends State<TodoInformationPopup> {
               height: 10,
             ),
             const Text(
-              "ADD",
+              "Add your goal",
               style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
-                  fontSize: 35),
+                  fontSize: 30),
             ),
             const SizedBox(
               height: 40,
@@ -59,7 +59,7 @@ class _TodoInformationPopupState extends State<TodoInformationPopup> {
               child: TextField(
                 controller: widget.descriptionController,
                 decoration: const InputDecoration(
-                  labelStyle: TextStyle( 
+                  labelStyle: TextStyle(
                       color: Color.fromARGB(255, 107, 99, 99),
                       fontWeight: FontWeight.bold),
                   labelText: "Description",
